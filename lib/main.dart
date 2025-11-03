@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pen/ui/pages/home_page.dart';
 import 'package:pen/ui/pages/splash_screen.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'persada ess Nusantara',
       home: SplashScreen(),
       routes: {
-         
+        '/home': (context) => const HomePage(),
       },
     );
   }

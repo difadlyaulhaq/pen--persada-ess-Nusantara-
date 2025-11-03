@@ -9,20 +9,23 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.of(context).pushReplacementNamed('/home');
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.flash_on, size: 100, color: Colors.blue),
-            // Image.asset(
-            //   'assets/images/logo.png',
-            //   width: 200,
-            //   height: 200,
-            // ),
+            Image(image: AssetImage('assets/logo.jpg'), height: 100),
             const SizedBox(height: 20),
-            Text("Welcome to persada ess Nusantara",
+            Text("Welcome to Persada ESS Nusantara",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ],
         ),
